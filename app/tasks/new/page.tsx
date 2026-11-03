@@ -6,8 +6,8 @@ import { trpc } from '@/trpc/client';
 
 export default function NewTaskPage() {
   const router = useRouter();
-  const [titulo, setTitulo] = useState('');
-  const [descricao, setDescricao] = useState('');
+  const [title, setTitulo] = useState('');
+  const [desc, setDescricao] = useState('');
   const [erroValidacao, setErroValidacao] = useState('');
 
   const utils = trpc.useUtils();
@@ -23,12 +23,12 @@ export default function NewTaskPage() {
 
   const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
-    if (!titulo.trim()) {
+    if (!title.trim()) {
       setErroValidacao('O campo de título é obrigatório.');
       return;
     }
     setErroValidacao('');
-    criarMutacao.mutate({ titulo, descricao });
+    criarMutacao.mutate({ title, desc });
   };
 
   return (
@@ -46,7 +46,7 @@ export default function NewTaskPage() {
           <label className="block text-sm font-medium mb-1">Título *</label>
           <input
             type="text"
-            value={titulo}
+            value={title}
             onChange={(e) => setTitulo(e.target.value)}
             className="w-full p-2 border rounded-md dark:bg-zinc-800"
             placeholder="Ex: Fazer o teste técnico"
@@ -56,7 +56,7 @@ export default function NewTaskPage() {
         <div>
           <label className="block text-sm font-medium mb-1">Descrição</label>
           <textarea
-            value={descricao}
+            value={desc}
             onChange={(e) => setDescricao(e.target.value)}
             className="w-full p-2 border rounded-md dark:bg-zinc-800"
             placeholder="Detalhes"

@@ -1,4 +1,3 @@
-// src/app/page.tsx
 'use client';
 
 import Link from 'next/link';
@@ -52,7 +51,7 @@ export default function TasksPage() {
   return (
     <main className="max-w-2xl mx-auto p-6 font-sans pb-20">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Lista de Tarefas (Rolagem Infinita)</h1>
+        <h1 className="text-2xl font-bold">Lista de Tarefas:</h1>
         <Link
           href="/tasks/new"
           className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition"
@@ -62,7 +61,7 @@ export default function TasksPage() {
       </div>
 
       {tasks.length === 0 ? (
-        <p className="text-gray-500">Nenhuma tarefa encontrada.</p>
+        <p className="text-gray-500">Nenhuma tarefa encontrada. 😶</p>
       ) : (
         <ul className="space-y-4">
           {tasks.map((task) => (
@@ -71,12 +70,12 @@ export default function TasksPage() {
               className="p-4 border rounded-lg shadow-sm flex justify-between items-start bg-white dark:bg-zinc-900"
             >
               <div>
-                <h2 className="font-semibold text-lg">{task.titulo}</h2>
+                <h2 className="font-semibold text-lg">{task.title}</h2>
                 <p className="text-gray-600 dark:text-zinc-400 text-sm mt-1">
-                  {task.descricao || 'Sem descrição'}
+                  {task.desc || 'Sem descrição'}
                 </p>
                 <span className="text-xs text-gray-400 mt-2 block">
-                  Criado em: {new Date(task.dataCriacao).toLocaleDateString()}
+                  Criado em: {new Date(task.created).toLocaleDateString()}
                 </span>
               </div>
             </li>

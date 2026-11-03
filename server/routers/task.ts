@@ -4,16 +4,16 @@ import { TRPCError } from '@trpc/server';
 
 export interface Task {
   id: string;
-  titulo: string;
-  descricao?: string;
-  dataCriacao: Date;
+  title: string;
+  desc?: string;
+  created: Date;
 }
 
 let tasks: Task[] = Array.from({ length: 25 }, (_, index) => ({
   id: (index + 1).toString(),
-  titulo: `Tarefa #${index + 1}`,
-  descricao: `Descrição ${index + 1}`,
-  dataCriacao: new Date(Date.now() - index * 1000000),
+  title: `Tarefa #${index + 1}`,
+  desc: `Descrição ${index + 1}`,
+  created: new Date(Date.now() - index * 1000000),
 }));
 
 export const taskRouter = router({
@@ -52,16 +52,16 @@ export const taskRouter = router({
   criar: publicProcedure
     .input(
       z.object({
-        titulo: z.string().min(1, 'O título é obrigatório.'),
-        descricao: z.string().optional(),
+        title: z.string().min(1, 'O título é obrigatório.'),
+        desc: z.string().optional(),
       })
     )
     .mutation(({ input }) => {
       const novaTarefa: Task = {
         id: Date.now().toString(),
-        titulo: input.titulo,
-        descricao: input.descricao,
-        dataCriacao: new Date(),
+        title: input.title,
+        desc: input.desc,
+        created: new Date(),
       };
       tasks.push(novaTarefa);
       return novaTarefa;
@@ -71,8 +71,8 @@ export const taskRouter = router({
     .input(
       z.object({
         id: z.string(),
-        titulo: z.string().min(1, 'O título é obrigatório.'),
-        descricao: z.string().optional(),
+        title: z.string().min(1, 'O título é obrigatório.'),
+        desc: z.string().optional(),
       })
     )
     .mutation(({ input }) => {
@@ -86,8 +86,8 @@ export const taskRouter = router({
 
       tasks[index] = {
         ...tasks[index],
-        titulo: input.titulo,
-        descricao: input.descricao ?? tasks[index].descricao,
+        title: input.title,
+        desc: input.desc ?? tasks[index].desc,
       };
 
       return tasks[index];
