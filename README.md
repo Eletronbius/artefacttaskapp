@@ -15,30 +15,29 @@ Operações CRUD Completas bem simples: Todos os endpoints configurados para lis
 - Tailwind CSS
 - TypeScript
 
-Estrutura do Projeto
 artefacttaskapp/
-│   │
-│   ├── app/                         # Rotas e páginas do Next.js (App Router)
-│   │   ├── api/trpc/[trpc]/route.ts # Endpoint adapter do tRPC
-│   │   ├── tasks/new/page.tsx       # Página de criação de tarefas
-│   │   └── page.tsx                 # Listagem com Infinite Scroll
-│   │
-│   ├── server/                      # Backend (tRPC & Lógica de Negócio)
-│   │   ├── routers/
-│   │   │   ├── _app.ts              # Roteador principal
-│   │   │   └── task.ts              # Router de tarefas (CRUD + Paginação)
-│   │   └── trpc/
-│   │       ├── context.ts           # Contexto do tRPC
-│   │       └── trpc.ts              # Inicialização do tRPC
-│   │
-│   └── trpc/                        # Configurações do Frontend tRPC
-│       ├── client.ts                # Cliente tRPC/React Query
-│       ├── Provider.tsx             # Provider global
-│       └── server.ts                # Helper (caller) para Server Components
+│
+├── app/                              # Rotas e páginas do Next.js (App Router)
+│   ├── api/trpc/[trpc]/route.ts      # Endpoint adapter do tRPC
+│   ├── tasks/new/page.tsx            # Página de criação de tarefas
+│   └── page.tsx                      # Listagem com Infinite Scroll
+│
+├── server/                           # Backend (tRPC & Lógica de Negócio)
+│   ├── routers/
+│   │   ├── _app.ts                   # Roteador principal
+│   │   └── task.ts                   # Router de tarefas (CRUD + Paginação)
+│   └── trpc/
+│       ├── context.ts                # Contexto do tRPC
+│       └── trpc.ts                   # Inicialização do tRPC
+│
+├── trpc/                             # Configurações do Frontend tRPC
+│   ├── client.ts                     # Cliente tRPC/React Query
+│   ├── Provider.tsx                  # Provider global
+│   └── server.ts                     # Helper (caller) para Server Components
 │
 ├── package.json
 └── tsconfig.json
-⚙️ Como Executar o Projeto Localmente
+Como Executar o Projeto Localmente
 Siga os passos abaixo para clonar e rodar o projeto na sua máquina:
 
 1. Pré-requisitos
