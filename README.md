@@ -16,25 +16,21 @@ Operações CRUD Completas bem simples: Todos os endpoints configurados para lis
 - TypeScript
 
 artefacttaskapp/
-│
-├── app/                              # Rotas e páginas do Next.js (App Router)
+├── app/
 │   ├── api/trpc/[trpc]/route.ts      # Endpoint adapter do tRPC
 │   ├── tasks/new/page.tsx            # Página de criação de tarefas
 │   └── page.tsx                      # Listagem com Infinite Scroll
-│
-├── server/                           # Backend (tRPC & Lógica de Negócio)
+├── server/
 │   ├── routers/
 │   │   ├── _app.ts                   # Roteador principal
 │   │   └── task.ts                   # Router de tarefas (CRUD + Paginação)
 │   └── trpc/
 │       ├── context.ts                # Contexto do tRPC
 │       └── trpc.ts                   # Inicialização do tRPC
-│
-├── trpc/                             # Configurações do Frontend tRPC
+├── trpc/
 │   ├── client.ts                     # Cliente tRPC/React Query
 │   ├── Provider.tsx                  # Provider global
 │   └── server.ts                     # Helper (caller) para Server Components
-│
 ├── package.json
 └── tsconfig.json
 Como Executar o Projeto Localmente
