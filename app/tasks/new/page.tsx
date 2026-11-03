@@ -14,7 +14,7 @@ export default function NewTaskPage() {
   const criarMutacao = trpc.task.criar.useMutation({
     onSuccess: () => {
       utils.task.listar.invalidate();
-      router.push('/tasks');
+      router.push('/');
     },
     onError: (err) => {
       setErroValidacao(err.message);
