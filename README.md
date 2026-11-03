@@ -48,8 +48,8 @@ Certifique-se de ter o Node.js (versão 18 ou superior) instalado no seu pc( ach
 Clone o repositório, acesse a pasta do projeto e instale as dependências:
 
 Bash
-git clone <url-do-seu-repositorio>
-cd meu-projeto-trpc
+git clone https://github.com/Eletronbius/artefacttaskapp
+cd artefacttaskapp
 npm install
 3. Executando em Ambiente de Desenvolvimento
 Inicie o servidor de desenvolvimento do Next.js:
