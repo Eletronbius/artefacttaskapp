@@ -17,7 +17,7 @@ Operações CRUD Completas bem simples: Todos os endpoints configurados para lis
 
 Estrutura do Projeto
 artefacttaskapp/
-├── src/
+│   │
 │   ├── app/                         # Rotas e páginas do Next.js (App Router)
 │   │   ├── api/trpc/[trpc]/route.ts # Endpoint adapter do tRPC
 │   │   ├── tasks/new/page.tsx       # Página de criação de tarefas
